@@ -15,15 +15,16 @@ class Blockchain:
         print(f"block data: {self.block_data}")
         print(f"block hash: {self.block_hash}")
 
+# code exec
 
 if __name__ == "__main__":
     trans1: str = "Anna send 1 BTC to Feri"
-    trans2: str = "Feri Send 2.3 BTC to Budi"
-    trans3: str = "Bagus Send 3.4 BTC to Hadi"
+    trans2: str = "Feri Send 1.3 BTC to Budi"
+    trans3: str = "Bagus Send 3.5 BTC to Hadi"
     trans4: str = 'Ivan send 5.5 BTC to Feryy'
 
     # transaction List
-    transact: list = [trans1, trans2, trans3]
+    transact: list = [trans1, trans2, trans3, trans4]
 
     # define class and Call Method
     initial_block: Blockchain = Blockchain("Initial String", transact)
@@ -32,3 +33,7 @@ if __name__ == "__main__":
     # the second block
     seconds_block: Blockchain = Blockchain(initial_block.block_hash, [trans2, trans4])
     seconds_block.get_transaction()
+
+    # third block
+    third_block = Blockchain(seconds_block.block_hash, [trans1, trans3, trans2])
+    third_block.get_transaction()
