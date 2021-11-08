@@ -16,7 +16,6 @@ class Blockchain:
         print(f"block hash: {self.block_hash}")
 
 # code exec
-
 if __name__ == "__main__":
     trans1: str = "Anna send 1 BTC to Feri"
     trans2: str = "Feri Send 1.3 BTC to Budi"
